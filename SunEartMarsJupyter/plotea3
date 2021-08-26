@@ -1,0 +1,7 @@
+do for [i=1:5000]{
+         set xrange[0:4e12]
+         set yrange[0:4e12]
+         set zrange[0:4e12]
+	 splot 'datos23.dat' every ::(50*(i-1)+1)::i*(50) w p
+	 pause 0.005
+	 }

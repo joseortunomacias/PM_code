@@ -1,0 +1,22 @@
+#  delta_t      = 40640.0;
+#  N_gridpoints = 50;
+#  H            = 3.0e10;
+#
+#  for (m=0;m<N_gridpoints;m++){
+#    for (i=0;i<N_gridpoints;i++){
+#      for (j=0;j<N_gridpoints;j++){
+#        if ((pow2(i-25) + pow2(j-25) + pow2(m-25))< 12.1*12.1 && (pow2(i-25) + pow2(j-25) + pow2(m-25))> 11.9*11.9){
+#          particles[counter].x = H*m;
+#          particles[counter].y = H*j;
+#          particles[counter].z = H*i;
+#          particles[counter].mass = 1.0e29;
+#
+set term gif animate
+set output "sphere_steps500.gif"
+set xrange[0:1.5e12]
+set yrange[0:1.5e12]
+set zrange[0:1.5e12]
+do for [i=1:500]{
+	 splot 'sphere500.dat' every ::(366*((i)-1)+1)::(i)*(366) w p
+	 }
+set output

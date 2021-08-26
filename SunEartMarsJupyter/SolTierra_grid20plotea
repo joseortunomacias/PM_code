@@ -1,0 +1,15 @@
+#Sol-Tierra. 1020 steps with 50 iterations for the potential calculator
+#N_gridpoints = 20
+#plot text for the data "SolTierra_grid20"
+set term gif animate
+set output "animate.gif"
+set xrange[2e11:8e11]
+set yrange[2e11:8e11]
+set zrange[2e11:8e11]
+do for [i=1:1020]{
+	 splot 'SolTierra_grid20.dat' every ::(2*(i-1)+1)::i*(2) pt 7 ps 0.8 title sprintf("Sun-Earth")
+	 }
+set output
+
+
+

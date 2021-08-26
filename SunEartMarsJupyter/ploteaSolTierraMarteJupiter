@@ -1,0 +1,10 @@
+#simaltion for the earth sun mars and jupiter
+set term gif animate
+set output "jupiter.gif"
+set xrange[0:2e12]
+set yrange[0:2e12]
+set zrange[0:2e12]
+do for [i=1:1000]{
+	 splot 'SolTierraMarteJupiter.dat' every ::(4*((i*4)-1)+1)::(i*4)*(4) pt 7 ps 0.8
+	 }
+set output

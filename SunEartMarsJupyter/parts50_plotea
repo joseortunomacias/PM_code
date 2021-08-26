@@ -1,0 +1,13 @@
+# 1020 steps with 60 iterations for the potential calculator
+#N_gridpoints = 20
+#plot text for the data "50parts_grid20"
+#mass of the particles = 5.9e28
+set term gif animate
+set output "parts50.gif"
+do for [i=1:255]{
+         set xrange[0:1e12]
+         set yrange[0:1e12]
+         set zrange[0:1e12]
+	 splot 'parts50.dat' every ::(50*((i*4)-1)+1)::(i*4)*(50) w p
+	 }
+set output
